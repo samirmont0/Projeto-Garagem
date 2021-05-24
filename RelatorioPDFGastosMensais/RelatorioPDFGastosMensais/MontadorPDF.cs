@@ -1,4 +1,5 @@
 ﻿using System.IO;
+using System;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 
@@ -45,6 +46,9 @@ namespace RelatorioPDFGastosMensais
 
         public void InsereInformacoesNaTabela()
         {
+            double total = 0;
+            double tot = 0;
+            double valor = 0;
             string[] lines = File.ReadAllLines(@"C:\RelatorioCarro\GastosMensais.txt");
 
             var logo = RetornaLogo();
@@ -60,8 +64,8 @@ namespace RelatorioPDFGastosMensais
 
             var tabela = new PdfPTable(new float[]
             {
-                86.5f,
-                13.5f
+                83,
+                17
             });
 
             tabela.DefaultCell.Colspan = 3;
@@ -72,19 +76,34 @@ namespace RelatorioPDFGastosMensais
 
             tabela.WidthPercentage = 100;
             tabela.DefaultCell.Border = Rectangle.BOX;
-            tabela.DefaultCell.HorizontalAlignment = Element.ALIGN_LEFT;
             tabela.DefaultCell.Colspan = 1;
             tabela.HeaderRows = 1;
 
             foreach (var line in lines)
             {
                 string[] a = line.Split('|');
+                Double.TryParse(a[1], out tot);
+                total += tot;
 
                 for (int i = 0; i < 2; i++)
                 {
-                    tabela.AddCell(new Phrase(a[i], _fonteCarros));
+                    tabela.DefaultCell.HorizontalAlignment = Element.ALIGN_LEFT;
+                    if (i == 0)
+                    {
+                        tabela.AddCell(new Phrase(a[i], _fonteCarros));
+                    }
+                    else
+                    {
+                        Double.TryParse(a[1], out valor);
+                        tabela.DefaultCell.HorizontalAlignment = Element.ALIGN_RIGHT;
+                        tabela.AddCell(new Phrase($"{valor.ToString("C")}", _fonteCarros));
+                    }
                 }
             }
+            tabela.DefaultCell.Colspan = 1;
+            tabela.DefaultCell.HorizontalAlignment = Element.ALIGN_RIGHT;
+            tabela.AddCell(new Phrase("Total:", _fonteCarros));
+            tabela.AddCell(new Phrase($"{total.ToString("C")}", _fonteCarros));
             InsereTabelaNoDocumento(tabela);
         }
     }

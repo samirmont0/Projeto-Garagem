@@ -13,11 +13,10 @@ typedef struct Estoque{
 }carros;
 
 //Cria estrutura de dados do tipo struct para os gastos
-typedef struct gastosMensais{
-        char nome[30];
-        char ano[10];
+typedef struct despesasMensais{
+        char tipo[15];
         char valor[10];
-}gastos;
+}despesas;
 
 /*============  Protótipos  ===============*/
 void abrirArquivo(char*, char*);
@@ -36,10 +35,7 @@ void zeraGastosMensais();
 void cadastraCarro();
 
 /*============  Variáveis Globais  ============*/
-carros carrosCadastrados[50];
-gastos gastosMen[30];
 FILE *arquivo;
-static int quantidade = 0;
 
 int main()
 {
@@ -74,18 +70,18 @@ void menuPrincipal()
     printf("\n (3) - Alterar carro");
     printf("\n (4) - Listar carros");
     printf("\n (5) - Gerenciar gastos mensais");
-    printf("\n (6) - Simular financiamento");
-    printf("\n (7) - Imprimir relatorio dos carros");
-    printf("\n (8) - Imprimir contrato de compra e venda");
+    printf("\n (6) - Imprimir relatório dos carros");
+    printf("\n (7) - Imprimir contrato de compra e venda");
+    printf("\n (8) - Imprimir relatório das despesas");
     printf("\n (0) - Sair");
-    printf("\n\n\n Opcao:");
+    printf("\n\n\n Opção:");
     limpaBufferTeclado();
     scanf("%d", &op);
 
     //SWITCH PARA CHAMADA DAS FUNÇÕES
         switch(op)
         {
-            case 1 :
+            case 1:
                 cadastraCarroOrdenado(0);
                 break;
 
@@ -106,15 +102,15 @@ void menuPrincipal()
                 break;
 
             case 6:
-                //();
-                break;
-
-            case 7:
                 imprimeRelatorioCarros();
                 break;
 
-            case 8:
+            case 7:
                 imprimeContratoCompraEVenda();
+                break;
+
+            case 8:
+                imprimeRelatorioGastos();
                 break;
 
             case 0 :
@@ -137,7 +133,7 @@ void abrirArquivo(char *nomeArq, char *modo)
 
     if(arquivo == NULL)
     {
-        printf("Erro na abertura do arquivo");
+        printf("Erro na abertura do arquivo, verifique se o arquivo de texto está na pasta! Dúvidas contate o suporte!!");
         getch();
         exit(0);
     }
@@ -171,7 +167,8 @@ void listaCarrosCadastrados()
 
     abrirArquivo("RelacaoDosCarros.txt", "r");
 
-    while (fgets(linhaArq, tamLinha, arquivo) != NULL)  {
+    while (fgets(linhaArq, tamLinha, arquivo) != NULL)
+    {
         printf("%s", linhaArq);
         qtd++;
     }
@@ -179,7 +176,7 @@ void listaCarrosCadastrados()
     free(linhaArq);
     fechaArquivo(arquivo);
 
-    printf("\nQuantidade de carros cadastrados: %d\n\n", qtd);
+    printf("\n\nQuantidade de carros cadastrados: %d\n\n", qtd);
     printf("\n\nDigite alguma tecla para retornar ao menu principal...");
     getch();
     menuPrincipal();
@@ -199,12 +196,12 @@ void removeCarro(int ehChamadaAlteracao)
 
     if(ehChamadaAlteracao)
     {
-        printf("Qual o nome do carro que deseja alterar?(O nome deve ser idêntico ao nome cadastrado)\n");
+        printf("Qual o nome do carro que deseja alterar?(O nome deve ser idêntico ao cadastrado!)\n");
         gets(nomeCarroRemovido);
     }
     else
     {
-        printf("Qual o nome do carro que deseja remover?(O nome deve ser idêntico ao nome cadastrado)\n");
+        printf("Qual o nome do carro que deseja remover?(O nome deve ser idêntico ao cadastrado!)\n");
         gets(nomeCarroRemovido);
     }
 
@@ -266,53 +263,6 @@ void removeCarro(int ehChamadaAlteracao)
     cadastraCarroOrdenado(1); //Chama a função de cadastrar carro, passando 1 como argumento, para não ter a opção de cadastrar mais de um carro
 }
 
-/*void simulaFinancimaneto()
-{
-    system("cls");
-
-    int meses, anoCarro;
-    double valorCarro, valorEntrada, valorParcela, result, divisorParcial, divisorParcialElevado, divisorTotal, valorFinanciado;
-    float IOF, cadastro = 756, avaliacao = 570, contrato = 250, CET;
-
-    printf("Digite o valor do carro: ");
-    scanf("%lf", &valorCarro);
-
-    printf("Digite o valor de entrada que o cliente deseja(Sugerido = R$ %.2lf): ", valorCarro * 0.3);
-    scanf("%lf", &valorEntrada);
-
-    printf("Digite o ano do carro: ");
-    scanf("%d", &anoCarro);
-
-    printf("Digite a quantidade de meses do financiamento: ");
-    scanf("%d", &meses);
-
-    valorFinanciado = valorCarro - valorEntrada;
-
-    CET = 1.5;
-
-    if(anoCarro < 2021)
-    {
-        while (anoCarro < 2021)
-        {
-            CET += 0.025;
-            anoCarro++;
-        }
-    }
-
-    if(valorCarro < 15000)
-    {
-        CET += 2.3;
-    }
-
-    if(valorCarro < )
-
-    divisorParcial = 1.0 / (1.0 + 0.0201);
-    divisorParcialElevado = pow(divisorParcial, meses);
-    divisorTotal = 1 - divisorParcialElevado;
-    result = 0.0201 / divisorTotal;
-    printf("\nO valor da parcela ficaria em torno de R$ %.2lf\n", valorFinanciado * result);
-}*/
-
 //CHAMA UMA APLICAÇÃO EM C# PARA IMPRIMIR EM PDF OS CARROS CADASTRADOS NO PROGRAMA
 void imprimeRelatorioCarros()
 {
@@ -341,7 +291,7 @@ void imprimeContratoCompraEVenda()
 
 void visualizaEAdicionaGastosMensais()
 {
-    char o;
+    int o;
 
     limpaTela();
     limpaBufferTeclado();
@@ -349,12 +299,12 @@ void visualizaEAdicionaGastosMensais()
     printf("------------Despesas do mes------------\n\n");
     printf("Qual opcao voce deseja?\n");
     printf("(1)Adicionar despesas\n");
-    printf("(2)Remover despesas\n\n");
+    printf("(2)Remover despesas\n");
     printf("(3)Visualizar despesas do mes\n");
-    printf("(4)Imprimir relatorio de despesas\n");
+    printf("(4)Imprimir relatório das despesas\n");
 
     printf("(0)Voltar para o menu principal\n");
-    scanf("%c", &o);
+    scanf("%d", &o);
 
     switch(o)
         {
@@ -367,7 +317,7 @@ void visualizaEAdicionaGastosMensais()
                 break;
 
             case 3:
-                //alteraCarro();
+                listaDespesas();
                 break;
 
             case 4:
@@ -379,11 +329,31 @@ void visualizaEAdicionaGastosMensais()
         }
 }
 
+void listaDespesas()
+{
+    limpaTela();
+    const size_t tamLinha = 50;
+    char* linhaArq = malloc(tamLinha);
+
+    abrirArquivo("GastosMensais.txt", "r");
+
+    while (fgets(linhaArq, tamLinha, arquivo) != NULL)
+    {
+        printf("%s", linhaArq);
+    }
+
+    free(linhaArq);
+    fechaArquivo(arquivo);
+    printf("\n\nDigite alguma tecla para retornar...");
+    getch();
+    visualizaEAdicionaGastosMensais();
+}
+
 void adicionaDespesas()
 {
-    int *pont;
-    char tipo[20], valor[10], opcao;
-    char nomeArquivo[30] = "Gastos Mensais.txt";
+    despesas despesasMen;
+    char opcao;
+    char nomeArquivo[30] = "GastosMensais.txt";
     char modoAbertura[3] = "a";
 
     limpaTela();
@@ -391,17 +361,17 @@ void adicionaDespesas()
 
     printf("------------Cadastro de despesas------------\n");
     printf("Digite o tipo da despesa: ");
-    scanf("%[^\n]", &tipo);
+    scanf("%s", &despesasMen.tipo);
 
     printf("Digite o valor da despesa: ");
-    scanf("%s", &valor);
+    scanf("%s", &despesasMen.valor);
 
-    //pont = abrirArquivo(nomeArquivo, modoAbertura);
+    abrirArquivo(nomeArquivo, modoAbertura);
 
-//    fprintf(pont, "%s|%s|R$ %s\n", nome, ano, valor);
+    fprintf(arquivo, "%s|R$ %s\n", despesasMen.tipo, despesasMen.valor);
 
     limpaTela();
-    fechaArquivo(pont);
+    fechaArquivo(arquivo);
 
     printf("Despesa cadastrada com sucesso!\n\n");
 
@@ -414,23 +384,23 @@ void adicionaDespesas()
     }
     else
     {
-        menuPrincipal();
+        visualizaEAdicionaGastosMensais();
     }
 }
 
 void removeDespesas()
 {
-    char o;
+    int o;
     limpaTela();
     limpaBufferTeclado();
 
-    printf("Qual opcao voce deseja?\n");
-    printf("(1)Remover alguma despesa especifica\nzn");
+    printf("Qual opcao voce deseja?\n\n");
+    printf("(1)Remover alguma despesa especifica\n");
     printf("(2)Zerar despesas\n");
 
     printf("(0)Voltar para o menu principal\n");
 
-    scanf("%c", &o);
+    scanf("%d", &o);
 
     switch(o)
     {
@@ -440,7 +410,6 @@ void removeDespesas()
 
             case 2:
                 zeraGastosMensais();
-                removeDespesas();
                 break;
 
             default:
@@ -450,12 +419,91 @@ void removeDespesas()
 
 void removeDespesaEspecifica()
 {
+    FILE *arquivoTemp;
+    despesas despesasNoArquivo;
+    const size_t tamLinha = 50;
+    char* linhaArq = malloc(tamLinha);
+    char nomeDespesaRemovida[15], opcao;
+    int qntd = 0, qntdDespesaNoArquivo = 0;
 
+    limpaBufferTeclado();
+    limpaTela();
+
+    printf("Qual o nome da despesa que deseja remover?(O nome deve ser idêntico ao cadastrado!)\n");
+    gets(nomeDespesaRemovida);
+
+    abrirArquivo("GastosMensais.txt", "r");
+    arquivoTemp = fopen("temp.txt", "w");
+
+    while (fgets(linhaArq, tamLinha, arquivo) != NULL)
+    {
+        separaLinhaDeGasto(linhaArq, &despesasNoArquivo);
+
+        int tamanhoNomeDespesa = strlen(nomeDespesaRemovida);
+
+        if(!strcmp(despesasNoArquivo.tipo, nomeDespesaRemovida) == 0)
+        {
+            fprintf(arquivoTemp,"%s", linhaArq);
+            qntdDespesaNoArquivo++;
+        }
+        qntd++;
+    }
+
+    fechaArquivo(arquivo);
+    fechaArquivo(arquivoTemp);
+
+    abrirArquivo("GastosMensais.txt", "w");
+    arquivoTemp = fopen("temp.txt", "r");
+
+    passaConteudoArquivo(arquivo, arquivoTemp);
+
+    fechaArquivo(arquivo);
+    fechaArquivo(arquivoTemp);
+
+    limpaTela();
+
+    if(qntd != qntdDespesaNoArquivo)
+    {
+        printf("Despesa removida com sucesso!\n\n");
+        printf("Deseja remover outra despesa? (S) ou (N)\n");
+    }
+    else
+    {
+        printf("Nome inexistente no sistema!\n\n");
+        printf("Deseja tentar novamente? (S) ou (N)\n");
+    }
+
+
+    scanf("%s", &opcao);
+
+    if(opcao == 'S' || opcao == 's')
+    {
+        removeDespesaEspecifica();
+    }
+    else
+    {
+        visualizaEAdicionaGastosMensais();
+    }
 }
 
 void zeraGastosMensais()
 {
-    remove("C:/Users/samir/Desktop/ProjetoGaragemCarro/ProjetoGaragem/ProjetoGaragemCarro/Gastos Mensais.txt");
+    char op;
+
+    limpaBufferTeclado();
+    limpaTela();
+
+    printf("Tem certeza que deseja remover todas as despesas? (S) ou (N)\n");
+    scanf("%c", &op);
+    if(op == 'S' || 's')
+    {
+        remove("GastosMensais.txt");
+        limpaTela();
+        printf("Despesas removidas com sucesso!\n");
+        printf("Digite alguma tecla para retornar...");
+        getch();
+    }
+    visualizaEAdicionaGastosMensais();
 }
 
 void separaLinhaDeCarro(char *linha, carros *carro)
@@ -492,6 +540,52 @@ void separaLinhaDeCarro(char *linha, carros *carro)
         k++;
     }
     carro->nome[a] = carro->ano[b] = carro->valor[c] = '\0';
+}
+
+void separaLinhaDeGasto(char *linha, despesas *despesa)
+{
+    int a = 0, b = 0;
+    int i = 0, k = 0;
+    while(linha[i] != '\0')
+    {
+        int j = i;
+        while(linha[j] != '\0' && linha[j] != '|')
+        {
+            switch(k)
+            {
+            case 0:
+                despesa->tipo[a] = linha[j];
+                a++;
+                break;
+            case 1:
+                despesa->valor[b] = linha[j];
+                b++;
+                break;
+            }
+            j++;
+        }
+        i = j;
+
+        if(linha[j] != '\0')
+            i++;
+
+        k++;
+    }
+    despesa->tipo[a] = despesa->valor[b] = '\0';
+}
+
+void passaConteudoArquivo(FILE *destino, FILE *origem)
+{
+    const size_t tamLinha = 50;
+    char* linhaArq = malloc(tamLinha); //Aloca dinamicamente as linhas do arquivo
+
+    while (fgets(linhaArq, tamLinha, origem) != NULL)//Traz do arquivo de origem, o contéudo até que seja NULL
+    {
+        if(strlen(linhaArq) > 3)//Condicional para eliminar do arquivo as linhas em branco
+        {
+            fprintf(destino, "%s", linhaArq);//Coloca dentro do arquivo, linha por linha do arquivo de origem
+        }
+    }
 }
 
 void cadastraCarroOrdenado(int ehChamadaAlteracao)
@@ -601,19 +695,55 @@ void cadastraCarroOrdenado(int ehChamadaAlteracao)
             menuPrincipal();
         }
     }
+    printf("Carro alterado com sucesso!\n\n");
+    printf("Digite qualquer tecla para voltar para o menu principal...");
+    getch();
     menuPrincipal();
 }
 
-void passaConteudoArquivo(FILE *destino, FILE *origem)
+/*void simulaFinancimaneto()
 {
-    const size_t tamLinha = 50;
-    char* linhaArq = malloc(tamLinha); //Aloca dinamicamente as linhas do arquivo
+    system("cls");
 
-    while (fgets(linhaArq, tamLinha, origem) != NULL)//Traz do arquivo de origem, o contéudo até que seja NULL
+    int meses, anoCarro;
+    double valorCarro, valorEntrada, valorParcela, result, divisorParcial, divisorParcialElevado, divisorTotal, valorFinanciado;
+    float IOF, cadastro = 756, avaliacao = 570, contrato = 250, CET;
+
+    printf("Digite o valor do carro: ");
+    scanf("%lf", &valorCarro);
+
+    printf("Digite o valor de entrada que o cliente deseja(Sugerido = R$ %.2lf): ", valorCarro * 0.3);
+    scanf("%lf", &valorEntrada);
+
+    printf("Digite o ano do carro: ");
+    scanf("%d", &anoCarro);
+
+    printf("Digite a quantidade de meses do financiamento: ");
+    scanf("%d", &meses);
+
+    valorFinanciado = valorCarro - valorEntrada;
+
+    CET = 1.5;
+
+    if(anoCarro < 2021)
     {
-        if(strlen(linhaArq) > 3)//Condicional para eliminar do arquivo as linhas em branco
+        while (anoCarro < 2021)
         {
-            fprintf(destino, "%s", linhaArq);//Coloca dentro do arquivo, linha por linha do arquivo de origem
+            CET += 0.025;
+            anoCarro++;
         }
     }
-}
+
+    if(valorCarro < 15000)
+    {
+        CET += 2.3;
+    }
+
+    if(valorCarro < )
+
+    divisorParcial = 1.0 / (1.0 + 0.0201);
+    divisorParcialElevado = pow(divisorParcial, meses);
+    divisorTotal = 1 - divisorParcialElevado;
+    result = 0.0201 / divisorTotal;
+    printf("\nO valor da parcela ficaria em torno de R$ %.2lf\n", valorFinanciado * result);
+}*/
