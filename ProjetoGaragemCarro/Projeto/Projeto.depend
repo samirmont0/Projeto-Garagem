@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1621787915 source:c:\users\samir\desktop\projetogaragemcarro\projetogaragem\projetogaragemcarro\projeto\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<math.h>
+	<locale.h>
+	<ctype.h>
+

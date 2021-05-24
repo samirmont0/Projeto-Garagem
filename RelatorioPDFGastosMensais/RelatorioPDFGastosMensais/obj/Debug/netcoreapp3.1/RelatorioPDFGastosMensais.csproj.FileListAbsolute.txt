@@ -1,0 +1,16 @@
+C:\Users\samir\Desktop\ProjetoGaragemCarro\ProjetoGaragem\RelatorioPDFGastosMensais\RelatorioPDFGastosMensais\bin\Debug\netcoreapp3.1\RelatorioPDFGastosMensais.exe
+C:\Users\samir\Desktop\ProjetoGaragemCarro\ProjetoGaragem\RelatorioPDFGastosMensais\RelatorioPDFGastosMensais\bin\Debug\netcoreapp3.1\RelatorioPDFGastosMensais.deps.json
+C:\Users\samir\Desktop\ProjetoGaragemCarro\ProjetoGaragem\RelatorioPDFGastosMensais\RelatorioPDFGastosMensais\bin\Debug\netcoreapp3.1\RelatorioPDFGastosMensais.runtimeconfig.json
+C:\Users\samir\Desktop\ProjetoGaragemCarro\ProjetoGaragem\RelatorioPDFGastosMensais\RelatorioPDFGastosMensais\bin\Debug\netcoreapp3.1\RelatorioPDFGastosMensais.runtimeconfig.dev.json
+C:\Users\samir\Desktop\ProjetoGaragemCarro\ProjetoGaragem\RelatorioPDFGastosMensais\RelatorioPDFGastosMensais\bin\Debug\netcoreapp3.1\RelatorioPDFGastosMensais.dll
+C:\Users\samir\Desktop\ProjetoGaragemCarro\ProjetoGaragem\RelatorioPDFGastosMensais\RelatorioPDFGastosMensais\bin\Debug\netcoreapp3.1\RelatorioPDFGastosMensais.pdb
+C:\Users\samir\Desktop\ProjetoGaragemCarro\ProjetoGaragem\RelatorioPDFGastosMensais\RelatorioPDFGastosMensais\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll
+C:\Users\samir\Desktop\ProjetoGaragemCarro\ProjetoGaragem\RelatorioPDFGastosMensais\RelatorioPDFGastosMensais\bin\Debug\netcoreapp3.1\itextsharp.dll
+C:\Users\samir\Desktop\ProjetoGaragemCarro\ProjetoGaragem\RelatorioPDFGastosMensais\RelatorioPDFGastosMensais\obj\Debug\netcoreapp3.1\RelatorioPDFGastosMensais.csprojAssemblyReference.cache
+C:\Users\samir\Desktop\ProjetoGaragemCarro\ProjetoGaragem\RelatorioPDFGastosMensais\RelatorioPDFGastosMensais\obj\Debug\netcoreapp3.1\RelatorioPDFGastosMensais.AssemblyInfoInputs.cache
+C:\Users\samir\Desktop\ProjetoGaragemCarro\ProjetoGaragem\RelatorioPDFGastosMensais\RelatorioPDFGastosMensais\obj\Debug\netcoreapp3.1\RelatorioPDFGastosMensais.AssemblyInfo.cs
+C:\Users\samir\Desktop\ProjetoGaragemCarro\ProjetoGaragem\RelatorioPDFGastosMensais\RelatorioPDFGastosMensais\obj\Debug\netcoreapp3.1\RelatorioPDFGastosMensais.csproj.CoreCompileInputs.cache
+C:\Users\samir\Desktop\ProjetoGaragemCarro\ProjetoGaragem\RelatorioPDFGastosMensais\RelatorioPDFGastosMensais\obj\Debug\netcoreapp3.1\RelatorioPDFGastosMensais.csproj.CopyComplete
+C:\Users\samir\Desktop\ProjetoGaragemCarro\ProjetoGaragem\RelatorioPDFGastosMensais\RelatorioPDFGastosMensais\obj\Debug\netcoreapp3.1\RelatorioPDFGastosMensais.dll
+C:\Users\samir\Desktop\ProjetoGaragemCarro\ProjetoGaragem\RelatorioPDFGastosMensais\RelatorioPDFGastosMensais\obj\Debug\netcoreapp3.1\RelatorioPDFGastosMensais.pdb
+C:\Users\samir\Desktop\ProjetoGaragemCarro\ProjetoGaragem\RelatorioPDFGastosMensais\RelatorioPDFGastosMensais\obj\Debug\netcoreapp3.1\RelatorioPDFGastosMensais.genruntimeconfig.cache
