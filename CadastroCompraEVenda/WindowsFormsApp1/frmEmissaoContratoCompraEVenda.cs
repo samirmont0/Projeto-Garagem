@@ -76,10 +76,11 @@ namespace ContratoCompraEVenda
 			{
 				try
 				{
-					Endereco _enderecoCliente = new Endereco(txtCidade.Text, cmbUF.Text, txtLogradouro.Text);
-					Cliente _cliente = new Cliente(txtNomeCliente.Text, mskTxtCPF.Text, txtProfissao.Text, cmbEstadoCivil.Text, txtRG.Text, txtExpedidor.Text, mskTxtTelefone.Text, _enderecoCliente);
+					Endereco enderecoCliente = new Endereco(txtCidade.Text, cmbUF.Text, txtLogradouro.Text);
+					Cliente cliente = new Cliente(txtNomeCliente.Text, mskTxtCPF.Text, txtProfissao.Text, cmbEstadoCivil.Text, txtRG.Text, txtExpedidor.Text, mskTxtTelefone.Text, enderecoCliente);
+					Carro carro = new Carro(txtAno.Text, txtCarro.Text, txtPlaca.Text, txtCor.Text, txtKM.Text, txtMarca.Text, txtRenavam.Text);
 
-					var montadorPDF = new MontadorPDF(_cliente);
+					var montadorPDF = new MontadorPDF(cliente, carro);
 					
 					montadorPDF.AlteraMargemDocumento(3, 3, 5, 5);
 					montadorPDF.AbreDocumento();
@@ -87,6 +88,7 @@ namespace ContratoCompraEVenda
 					montadorPDF.InsereLogo();
 					montadorPDF.SeccaoCabecalho();
 					montadorPDF.SeccaoPartes();
+					montadorPDF.SeccaoDoObjetoDoContrato();
 
 					montadorPDF.FechaDocumento();
 					montadorPDF.AbrePDF();
