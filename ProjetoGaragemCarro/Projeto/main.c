@@ -78,7 +78,8 @@ void menuPrincipal()
     limpaBufferTeclado();
     scanf("%d", &op);
 
-    //SWITCH PARA CHAMADA DAS FUNÇÕES
+   do
+   {
         switch(op)
         {
             case 1:
@@ -119,6 +120,7 @@ void menuPrincipal()
             default:
                 menuPrincipal();
         }
+    }while(op != 0);
 }
 
 void alteraCarro()
@@ -302,8 +304,8 @@ void visualizaEAdicionaGastosMensais()
     printf("(2)Remover despesas\n");
     printf("(3)Visualizar despesas do mes\n");
     printf("(4)Imprimir relatório das despesas\n");
-
     printf("(0)Voltar para o menu principal\n");
+    printf("\n\n Opção:");
     scanf("%d", &o);
 
     switch(o)
@@ -331,6 +333,7 @@ void visualizaEAdicionaGastosMensais()
 
 void listaDespesas()
 {
+    despesas desp;
     limpaTela();
     const size_t tamLinha = 50;
     char* linhaArq = malloc(tamLinha);
@@ -339,7 +342,8 @@ void listaDespesas()
 
     while (fgets(linhaArq, tamLinha, arquivo) != NULL)
     {
-        printf("%s", linhaArq);
+        separaLinhaDeGasto(linhaArq, &desp);
+        printf("%s |R$ %s", desp.tipo, desp.valor);
     }
 
     free(linhaArq);
@@ -363,12 +367,12 @@ void adicionaDespesas()
     printf("Digite o tipo da despesa: ");
     scanf("%s", &despesasMen.tipo);
 
-    printf("Digite o valor da despesa: ");
+    printf("Digite o valor da despesa(Exemplo - 100 ou 100,25): ");
     scanf("%s", &despesasMen.valor);
 
     abrirArquivo(nomeArquivo, modoAbertura);
 
-    fprintf(arquivo, "%s|R$ %s\n", despesasMen.tipo, despesasMen.valor);
+    fprintf(arquivo, "%s|%s\n", despesasMen.tipo, despesasMen.valor);
 
     limpaTela();
     fechaArquivo(arquivo);
@@ -397,7 +401,6 @@ void removeDespesas()
     printf("Qual opcao voce deseja?\n\n");
     printf("(1)Remover alguma despesa especifica\n");
     printf("(2)Zerar despesas\n");
-
     printf("(0)Voltar para o menu principal\n");
 
     scanf("%d", &o);
@@ -591,7 +594,7 @@ void passaConteudoArquivo(FILE *destino, FILE *origem)
 void cadastraCarroOrdenado(int ehChamadaAlteracao)
 {
     carros carro;
-    int ehCarroNaoCadastrado = 1, qntd;
+    int ehCarroNaoCadastrado = 1;
     char opcao;
     char nomeArquivo[50] = "RelacaoDosCarros.txt";
     char modoAbertura[3] = "r";
@@ -612,11 +615,12 @@ void cadastraCarroOrdenado(int ehChamadaAlteracao)
     printf("------------%s de carro------------\n", nomeCabecalho);
     printf("Digite o nome do carro: ");
     gets(carro.nome);
+    if(carro.nome )
 
     printf("Digite o ano do carro: ");
     gets(carro.ano);
 
-    printf("Digite o valor do carro: ");
+    printf("Digite o valor do carro(Exemplo - 39.900): ");
     gets(carro.valor);
 
     abrirArquivo(nomeArquivo, modoAbertura);
@@ -648,12 +652,10 @@ void cadastraCarroOrdenado(int ehChamadaAlteracao)
 
         fprintf(arquivoTemp, "\n%s|%s|%s", carroTemp.nome, carroTemp.ano, carroTemp.valor);
 
-        printf(linhaArq);
         limpaBufferTeclado();
-        qntd++;
     }
 
-    if(ehCarroNaoCadastrado && !strstr(linhaArq, "R$") == NULL)
+    if(ehCarroNaoCadastrado && strstr(linhaArq, "R$") != NULL)
     {
         fprintf(arquivoTemp, "\n%s|%s|R$ %s", carro.nome, carro.ano, carro.valor);
     }
