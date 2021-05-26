@@ -7,7 +7,7 @@ namespace RelatorioPDFCarros
     public class MontadorPDF
     {
         private Document doc;
-        private const string caminho = @"C:\RelatorioCarro\TabelaAlfabetica.pdf";
+        private const string caminho = @"C:\MunirVeiculos\TabelaAlfabetica.pdf";
         private PdfWriter writer;
         private Font _fonteCarros = new Font(Font.FontFamily.TIMES_ROMAN, 14, 1);
 
@@ -35,7 +35,7 @@ namespace RelatorioPDFCarros
 
         public Image RetornaLogo()
         {
-            Image logo = Image.GetInstance(@"C:\RelatorioCarro\imagem\LogoMunir.jpeg");
+            Image logo = Image.GetInstance(@"C:\MunirVeiculos\imagemLogo\LogoMunirVeiculos.jpeg");
             logo.Alignment = Element.ALIGN_CENTER;
             logo.ScaleAbsolute(340, 140);
 
@@ -44,7 +44,7 @@ namespace RelatorioPDFCarros
 
         public void InsereInformacoesNaTabela()
         {
-            string[] lines = File.ReadAllLines(@"C:\RelatorioCarro\RelacaoDosCarros.txt");
+            string[] lines = File.ReadAllLines(@"C:\MunirVeiculos\RelacaoDosCarros.txt");
 
             var logo = RetornaLogo();
 

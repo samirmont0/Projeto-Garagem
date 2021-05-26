@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RelatorioPDFCarros", "RelatorioPDFCarros\RelatorioPDFCarros.csproj", "{C3A147F1-40BC-4BB3-8875-EEB4AE7B4EC9}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Instalador_RelatorioPDF", "RelatorioPDFCarros\instalador\Instalador_RelatorioPDF\Instalador_RelatorioPDF.vdproj", "{8D255467-7B3F-4F89-935E-D37FA50574E7}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "InstaladorTabelaCarros", "..\..\..\Instaladores Projeto\InstaladorTabelaCarros\InstaladorTabelaCarros.vdproj", "{C1D38C25-A982-4820-A5A9-8F25B6FA61E7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,8 +17,8 @@ Global
 		{C3A147F1-40BC-4BB3-8875-EEB4AE7B4EC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C3A147F1-40BC-4BB3-8875-EEB4AE7B4EC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C3A147F1-40BC-4BB3-8875-EEB4AE7B4EC9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8D255467-7B3F-4F89-935E-D37FA50574E7}.Debug|Any CPU.ActiveCfg = Debug
-		{8D255467-7B3F-4F89-935E-D37FA50574E7}.Release|Any CPU.ActiveCfg = Release
+		{C1D38C25-A982-4820-A5A9-8F25B6FA61E7}.Debug|Any CPU.ActiveCfg = Debug
+		{C1D38C25-A982-4820-A5A9-8F25B6FA61E7}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

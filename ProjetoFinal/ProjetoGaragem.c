@@ -27,7 +27,7 @@ void listaCarrosCadastrados();
 void imprimeContratoCompraEVenda();
 void imprimeRelatorioCarros();
 void imprimeRelatorioGastos();
-void visualizaEAdicionaGastosMensais();
+void visualizaEGerenciaDespesas();
 void adicionaDespesas();
 void removeDespesas();
 void removeDespesaEspecifica();
@@ -69,7 +69,7 @@ void menuPrincipal()
     printf("\n (2) - Excluir carro");
     printf("\n (3) - Alterar carro");
     printf("\n (4) - Listar carros");
-    printf("\n (5) - Gerenciar gastos");
+    printf("\n (5) - Gerenciar despesas");
     printf("\n (6) - Imprimir relatório dos carros");
     printf("\n (7) - Imprimir contrato de compra e venda");
     printf("\n (8) - Imprimir relatório das despesas");
@@ -99,7 +99,7 @@ void menuPrincipal()
                 break;
 
             case 5:
-                visualizaEAdicionaGastosMensais();
+                visualizaEGerenciaDespesas();
                 break;
 
             case 6:
@@ -269,34 +269,33 @@ void removeCarro(int ehChamadaAlteracao)
 void imprimeRelatorioCarros()
 {
     limpaTela();
-    popen("C:/MunirVeiculos/RelatorioPDFCarros.exe", "r");
+    popen("RelatorioPDFCarros.exe", "r");
     printf("Aperte qualquer tecla para o PDF com a tabela dos carros ser aberta...");
     getch();
-    popen("C:/RelatorioCarro/TabelaAlfabetica.pdf", "r");
+    popen("TabelaAlfabetica.pdf", "r");
     menuPrincipal();
 }
 
 void imprimeRelatorioGastos()
 {
     limpaTela();
-    popen("C:/MunirVeiculos/RelatorioPDFGastosMensais.exe", "r");
+    popen("RelatorioPDFGastosMensais.exe", "r");
     printf("Aperte qualquer tecla para o PDF com a tabela das despesas ser aberta...");
     getch();
-    popen("C:/RelatorioCarro/GastosMensais.pdf", "r");
+    popen("GastosMensais.pdf", "r");
     menuPrincipal();
 }
 
 void imprimeContratoCompraEVenda()
 {
     limpaTela();
-    popen("C:/MunirVeiculos/ContratoMunirVeiculos.exe", "r");
-    printf("Aperte qualquer tecla para o PDF com a tabela dos carros ser aberta...");
+    popen("ContratoMunirVeiculos.exe", "r");
+    printf("Aperte qualquer tecla para voltar para o menu principal...");
     getch();
-    popen("C:/RelatorioCarro/GastosMensais.pdf", "r");
     menuPrincipal();
 }
 
-void visualizaEAdicionaGastosMensais()
+void visualizaEGerenciaDespesas()
 {
     int o;
 
@@ -308,9 +307,8 @@ void visualizaEAdicionaGastosMensais()
     printf("(1)Adicionar despesas\n");
     printf("(2)Remover despesas\n");
     printf("(3)Visualizar despesas\n");
-    printf("(4)Imprimir relatório das despesas\n");
     printf("(0)Voltar para o menu principal\n");
-    printf("\n\n Opção:");
+    printf("\n\nOpção:");
     scanf("%d", &o);
 
     switch(o)
@@ -325,10 +323,6 @@ void visualizaEAdicionaGastosMensais()
 
             case 3:
                 listaDespesas();
-                break;
-
-            case 4:
-                imprimeRelatorioGastos();
                 break;
 
             default:
@@ -355,7 +349,7 @@ void listaDespesas()
     fechaArquivo(arquivo);
     printf("\n\nDigite alguma tecla para retornar...");
     getch();
-    visualizaEAdicionaGastosMensais();
+    visualizaEGerenciaDespesas();
 }
 
 void adicionaDespesas()
@@ -393,7 +387,7 @@ void adicionaDespesas()
     }
     else
     {
-        visualizaEAdicionaGastosMensais();
+        visualizaEGerenciaDespesas();
     }
 }
 
@@ -490,7 +484,7 @@ void removeDespesaEspecifica()
     }
     else
     {
-        visualizaEAdicionaGastosMensais();
+        visualizaEGerenciaDespesas();
     }
 }
 
@@ -511,7 +505,7 @@ void zeraGastosMensais()
         printf("Digite alguma tecla para retornar...");
         getch();
     }
-    visualizaEAdicionaGastosMensais();
+    visualizaEGerenciaDespesas();
 }
 
 void separaLinhaDeCarro(char *linha, carros *carro)
@@ -754,3 +748,4 @@ void cadastraCarroOrdenado(int ehChamadaAlteracao)
     result = 0.0201 / divisorTotal;
     printf("\nO valor da parcela ficaria em torno de R$ %.2lf\n", valorFinanciado * result);
 }*/
+

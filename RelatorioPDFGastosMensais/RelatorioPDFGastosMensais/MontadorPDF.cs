@@ -8,7 +8,7 @@ namespace RelatorioPDFGastosMensais
     public class MontadorPDF
     {
         private Document doc;
-        private const string caminho = @"C:\RelatorioCarro\GastosMensais.pdf";
+        private const string caminho = @"C:\MunirVeiculos\GastosMensais.pdf";
         private PdfWriter writer;
         private Font _fonteCabecalho = new Font(Font.FontFamily.TIMES_ROMAN, 14, 1, BaseColor.RED);
         private Font _fonteCarros = new Font(Font.FontFamily.TIMES_ROMAN, 14, 1);
@@ -37,7 +37,7 @@ namespace RelatorioPDFGastosMensais
 
         public Image RetornaLogo()
         {
-            Image logo = Image.GetInstance(@"C:\RelatorioCarro\imagem\LogoMunir.jpeg");
+            Image logo = Image.GetInstance(@"C:\MunirVeiculos\imagemLogo\LogoMunirVeiculos.jpeg");
             logo.Alignment = Element.ALIGN_CENTER;
             logo.ScaleAbsolute(340, 140);
 
@@ -49,7 +49,7 @@ namespace RelatorioPDFGastosMensais
             double total = 0;
             double tot = 0;
             double valor = 0;
-            string[] lines = File.ReadAllLines(@"C:\RelatorioCarro\GastosMensais.txt");
+            string[] lines = File.ReadAllLines(@"C:\MunirVeiculos\GastosMensais.txt");
 
             var logo = RetornaLogo();
 
