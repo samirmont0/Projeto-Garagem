@@ -12,6 +12,8 @@ namespace ContratoCompraEVenda
 
         public string OrgaoExpedidor { get; set; }
 
+        public string Nacionalidade { get; set; }
+
         public string Nome
         {
             get => _nome;
@@ -88,7 +90,7 @@ namespace ContratoCompraEVenda
             }
         }
 
-        public Cliente(string nome, string cpf, string profissao, string estadoCivil, string rg, string orgaoExpedidor, string telefone, Endereco enderecoCliente)
+        public Cliente(string nome, string cpf, string profissao, string estadoCivil, string rg, string orgaoExpedidor, string telefone, string nacionalidade, Endereco enderecoCliente)
         {
             Nome = nome;
             CPF = cpf;
@@ -96,10 +98,11 @@ namespace ContratoCompraEVenda
             EstadoCivil = estadoCivil;
             RG = rg;
             Telefone = telefone;
+            Nacionalidade = nacionalidade;
             EnderecoCliente = enderecoCliente;
             OrgaoExpedidor = orgaoExpedidor;
         }
 
-        
+
     }
 }

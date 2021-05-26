@@ -16,7 +16,13 @@
 
         public string Renavam { get; set; }
 
-        public Carro(string ano, string nome, string placa, string cor, string km, string marca, string renavam)
+        public string Chassi { get; set; }
+
+        public string FormaPagamento { get; set; }
+
+        public string Valor { get; set; }
+
+        public Carro(string ano, string nome, string placa, string cor, string km, string marca, string renavam, string chassi, string formaPagamento, string valor)
         {
             Ano = ano;
             Nome = nome;
@@ -25,7 +31,10 @@
             KM = km;
             Marca = marca;
             Renavam = renavam;
+            Chassi = chassi;
+            FormaPagamento = formaPagamento;
+            Valor = valor;
         }
     }
-    
+
 }
