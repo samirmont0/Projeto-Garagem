@@ -7,7 +7,7 @@
 
 //Cria estrutura de dados do tipo struct para os carros
 typedef struct Estoque{
-        char nome[30];
+        char nome[60];
         char ano[10];
         char valor[10];
 }carros;

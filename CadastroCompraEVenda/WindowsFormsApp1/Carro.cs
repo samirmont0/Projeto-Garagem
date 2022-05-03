@@ -22,7 +22,9 @@
 
         public string Valor { get; set; }
 
-        public Carro(string ano, string nome, string placa, string cor, string km, string marca, string renavam, string chassi, string formaPagamento, string valor)
+        public string Acessorio { get; set; }
+
+        public Carro(string ano, string nome, string placa, string cor, string km, string marca, string renavam, string chassi, string formaPagamento, string valor, string acessorio)
         {
             Ano = ano;
             Nome = nome;
@@ -34,6 +36,7 @@
             Chassi = chassi;
             FormaPagamento = formaPagamento;
             Valor = valor;
+            Acessorio = acessorio;
         }
     }
 

@@ -21,7 +21,7 @@ namespace ContratoCompraEVenda
 
         public bool TemCarroPreenchido()
         {
-            if (txtCarro.Text != "" && txtKM.Text != "" && txtPlaca.Text != "" && txtMarca.Text != "" && txtRenavam.Text != "" && txtCor.Text != "" && txtAno.Text != "" && txtChassi.Text != "" && txtFormaPagamento.Text != "" && txtValor.Text != "")
+            if (txtCarro.Text != "" && txtKM.Text != "" && txtPlaca.Text != "" && txtMarca.Text != "" && txtRenavam.Text != "" && txtCor.Text != "" && txtAno.Text != "" && txtChassi.Text != "" && txtFormaPagamento.Text != "" && txtValor.Text != "" && txtAcessorio.Text != "")
             {
                 return true;
             }
@@ -75,7 +75,7 @@ namespace ContratoCompraEVenda
                 {
                     Endereco enderecoCliente = new Endereco(txtCidade.Text, cmbUF.Text, txtLogradouro.Text);
                     Cliente cliente = new Cliente(txtNomeCliente.Text, mskTxtCPF.Text, txtProfissao.Text, cmbEstadoCivil.Text, txtRG.Text, txtExpedidor.Text, mskTxtTelefone.Text, txtNacionalidade.Text, enderecoCliente);
-                    Carro carro = new Carro(txtAno.Text, txtCarro.Text, txtPlaca.Text, txtCor.Text, txtKM.Text, txtMarca.Text, txtRenavam.Text, txtChassi.Text, txtFormaPagamento.Text, txtValor.Text);
+                    Carro carro = new Carro(txtAno.Text, txtCarro.Text, txtPlaca.Text, txtCor.Text, txtKM.Text, txtMarca.Text, txtRenavam.Text, txtChassi.Text, txtFormaPagamento.Text, txtValor.Text, txtAcessorio.Text);
 
                     var montadorPDF = new MontadorPDF(cliente, carro);
 

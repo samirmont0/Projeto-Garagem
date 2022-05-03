@@ -14,6 +14,7 @@ namespace ContratoCompraEVenda
         string caminho;
         private Font _fonteNegrito = FontFactory.GetFont("Arial", 13.5f, Font.BOLD);
         private Font _fonte = FontFactory.GetFont("Arial", 13.5f, Font.NORMAL);
+        private Font _fontePagamento = FontFactory.GetFont("Arial", 12f, Font.NORMAL);
 
         private PdfWriter writer;
 
@@ -23,8 +24,7 @@ namespace ContratoCompraEVenda
             _carro = carro;
             doc = new Document(PageSize.A4);
             doc.AddCreationDate();
-            string[] nomeCliente = _cliente.Nome.Split();
-            caminho = @"C:\RelatorioCarro\ContratosClientes\" + _cliente.Nome + ".pdf";
+            caminho = @"C:\MunirVeiculos\ContratosClientes\" + _cliente.Nome + ".pdf";
             writer = PdfWriter.GetInstance(doc, new FileStream(caminho, FileMode.Create));
         }
 
@@ -55,7 +55,7 @@ namespace ContratoCompraEVenda
 
         public Image RetornaLogo()
         {
-            Image logo = Image.GetInstance(@"C:\Users\samir\Desktop\ProjetoGaragemCarro\LogoMunir.jpeg");
+            Image logo = Image.GetInstance(@"C:\MunirVeiculos\imagemLogo\LogoMunirVeiculos.jpeg");
             logo.Alignment = Element.ALIGN_CENTER;
             logo.ScaleAbsolute(340, 140);
 
@@ -87,7 +87,7 @@ namespace ContratoCompraEVenda
             tabelaCabecalho.DefaultCell.Border = Rectangle.NO_BORDER;
             tabelaCabecalho.DefaultCell.HorizontalAlignment = Element.ALIGN_CENTER;
 
-            tabelaCabecalho.AddCell(new Phrase("CONTRATO PARTICULAR DE COMPRA E VENDA DE AUTOMÓVEL\n\n\n\n", _fonteNegrito));
+            tabelaCabecalho.AddCell(new Phrase("CONTRATO PARTICULAR DE COMPRA E VENDA DE AUTOMÓVEL\n\n", _fonteNegrito));
             InsereTabelaNoDocumento(tabelaCabecalho);
         }
 
@@ -169,7 +169,7 @@ namespace ContratoCompraEVenda
             tabelaObjetoContrato.AddCell(frasePrimClausula1);
 
             var primChunk2 = new Chunk("Cláusula 2ª ", _fonteNegrito);
-            var segChunk2 = new Chunk($"Compõe ainda o objeto do presente contrato, os acessórios do veículo, quais sejam ...\n", _fonte);
+            var segChunk2 = new Chunk($"Compõe ainda o objeto do presente contrato, os acessórios do veículo, quais sejam {_carro.Acessorio}\n", _fonte);
 
             var fraseSegClausula = new Phrase();
             fraseSegClausula.Add(primChunk2);
@@ -269,7 +269,7 @@ namespace ContratoCompraEVenda
 
             for (int i = 0; i < pagamentos.Length; i++)
             {
-                tabelaPreco.AddCell(new Phrase($"{pagamentos[i]}", _fonte));
+                tabelaPreco.AddCell(new Phrase($"  {pagamentos[i]}", _fontePagamento));
             }
 
             InsereTabelaNoDocumento(tabelaPreco);
@@ -298,6 +298,15 @@ namespace ContratoCompraEVenda
             fraseOitClausula.Add(segChunkClaus8);
 
             tabelaRescisao.AddCell(fraseOitClausula);
+            InsereTabelaNoDocumento(tabelaRescisao);
+
+            doc.NewPage();
+
+            var tabelaRescisaoSegParte = new PdfPTable(1);
+
+            tabelaRescisaoSegParte.DefaultCell.Border = Rectangle.NO_BORDER;
+            tabelaRescisaoSegParte.DefaultCell.HorizontalAlignment = Element.ALIGN_JUSTIFIED;
+            tabelaRescisaoSegParte.DefaultCell.SetLeading(0, 1.5f);
 
             var primChunkClaus9 = new Chunk("\n\nCláusula 9ª ", _fonteNegrito);
             var segChunkClaus9 = new Chunk($"Havendo atraso no pagamento das parcelas acordadas, incidirá multa de 2% (dois por cento) sobre o valor da parcela em atraso, e juros de 0,03333% ao dia.\n\n", _fonte);
@@ -306,7 +315,7 @@ namespace ContratoCompraEVenda
             fraseNonaClausula.Add(primChunkClaus9);
             fraseNonaClausula.Add(segChunkClaus9);
 
-            tabelaRescisao.AddCell(fraseNonaClausula);
+            tabelaRescisaoSegParte.AddCell(fraseNonaClausula);
 
             var primChunkClaus10 = new Chunk("Cláusula 10ª ", _fonteNegrito);
             var segChunkClaus10 = new Chunk($"Caso alguma das partes não cumpra o disposto nas cláusulas acima, responsabilizar-se-á pelo pagamento de multa equivalente a 20% (vinte por cento) do valor da venda do automóvel.\n\n", _fonte);
@@ -315,9 +324,9 @@ namespace ContratoCompraEVenda
             fraseDecimaClausula.Add(primChunkClaus10);
             fraseDecimaClausula.Add(segChunkClaus10);
 
-            tabelaRescisao.AddCell(fraseDecimaClausula);
+            tabelaRescisaoSegParte.AddCell(fraseDecimaClausula);
 
-            InsereTabelaNoDocumento(tabelaRescisao);
+            InsereTabelaNoDocumento(tabelaRescisaoSegParte);
         }
 
         public void SeccaoTransferencia()
@@ -412,6 +421,8 @@ namespace ContratoCompraEVenda
                 SpacingBefore = 45
             };
 
+            string[] nomeCliente = _cliente.Nome.Split(' ');
+
             tabelaPreAssinatura.DefaultCell.Border = Rectangle.NO_BORDER;
             tabelaPreAssinatura.DefaultCell.HorizontalAlignment = Element.ALIGN_JUSTIFIED;
             tabelaPreAssinatura.DefaultCell.SetLeading(0, 1.5f);
@@ -444,10 +455,12 @@ namespace ContratoCompraEVenda
             tabelaAssinatura.AddCell(new Phrase("           VENDEDOR", _fonte));
             tabelaAssinatura.AddCell(new Phrase("\t                   COMPRADOR", _fonte));
 
-            tabelaAssinatura.DefaultCell.Colspan = 2;
+            tabelaAssinatura.DefaultCell.Colspan = 1;
             tabelaAssinatura.DefaultCell.SetLeading(0, 1f);
             tabelaAssinatura.AddCell(new Phrase("      MUNIR VEICULOS", _fonteNegrito));
-            tabelaAssinatura.AddCell(new Phrase("     15.123.875/0001-58", _fonteNegrito));
+            tabelaAssinatura.AddCell(new Phrase($"\t                  {nomeCliente[0]} {nomeCliente[1]}", _fonteNegrito));
+            tabelaAssinatura.AddCell(new Phrase("      15.123.875/0001-58", _fonteNegrito));
+            tabelaAssinatura.AddCell(new Phrase($"\t                  {_cliente.CPF}", _fonteNegrito));
 
             InsereTabelaNoDocumento(tabelaAssinatura);
 

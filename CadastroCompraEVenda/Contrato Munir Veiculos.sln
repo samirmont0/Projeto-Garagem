@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContratoCompraEVenda", "WindowsFormsApp1\ContratoCompraEVenda.csproj", "{9C5E0BD7-3E9B-4194-A25C-7A00DC3D96E4}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Instalador Contrato", "..\..\..\Instaladores Projeto\Instalador Contrato\Instalador Contrato.vdproj", "{91BABB10-133D-4A82-95AD-6C438C2972C4}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "InstaladorContrato", "InstaladorContrato\InstaladorContrato.vdproj", "{425AC4EE-D393-4B4B-820D-15124527691F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,8 +17,8 @@ Global
 		{9C5E0BD7-3E9B-4194-A25C-7A00DC3D96E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9C5E0BD7-3E9B-4194-A25C-7A00DC3D96E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9C5E0BD7-3E9B-4194-A25C-7A00DC3D96E4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{91BABB10-133D-4A82-95AD-6C438C2972C4}.Debug|Any CPU.ActiveCfg = Debug
-		{91BABB10-133D-4A82-95AD-6C438C2972C4}.Release|Any CPU.ActiveCfg = Release
+		{425AC4EE-D393-4B4B-820D-15124527691F}.Debug|Any CPU.ActiveCfg = Debug
+		{425AC4EE-D393-4B4B-820D-15124527691F}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

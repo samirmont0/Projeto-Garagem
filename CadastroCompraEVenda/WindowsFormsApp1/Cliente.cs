@@ -42,7 +42,6 @@ namespace ContratoCompraEVenda
 
         public string RG { get; set; }
 
-
         public string CPF
         {
             get => _cpf;
