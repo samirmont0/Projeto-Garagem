@@ -7,9 +7,9 @@ namespace RelatorioPDFCarros
     public class MontadorPDF
     {
         private Document doc;
-        private const string caminho = @"C:\MunirVeiculos\TabelaAlfabetica.pdf";
+        private const string caminho = @"C:\MunirVeiculos\Tabela Munir Veiculos.pdf";
         private PdfWriter writer;
-        private Font _fonteCarros = new Font(Font.FontFamily.TIMES_ROMAN, 14, 1);
+        private Font _fonteCarros = new Font(Font.FontFamily.TIMES_ROMAN, 16, 1);
 
         public MontadorPDF()
         {
@@ -59,9 +59,9 @@ namespace RelatorioPDFCarros
 
             var tabela = new PdfPTable(new float[] 
             { 
-                73,
-                12.5f,
-                13.5f
+                70,
+                14.5f,
+                15.5f
             });
 
             tabela.DefaultCell.Colspan = 3;
@@ -75,14 +75,30 @@ namespace RelatorioPDFCarros
             tabela.DefaultCell.Colspan = 1;
             tabela.HeaderRows = 1;
 
+
+            var contador = 0;
             foreach (var line in lines)
             {
+                if(contador % 2 == 0)
+                {
+                    tabela.DefaultCell.BackgroundColor = new BaseColor(207, 211, 213);
+                }
+                else
+                {
+                    tabela.DefaultCell.BackgroundColor = BaseColor.WHITE;
+                }
                 string[] a = line.Split('|');
 
                 for (int i = 0; i < 3; i++)
                 {
+                    if (i == 1)
+                    {
+                        tabela.DefaultCell.HorizontalAlignment = Element.ALIGN_CENTER;
+                    }
                     tabela.AddCell(new Phrase(a[i], _fonteCarros));
+                    tabela.DefaultCell.HorizontalAlignment = Element.ALIGN_LEFT;
                 }
+                contador++;
             }
             InsereTabelaNoDocumento(tabela);
         }

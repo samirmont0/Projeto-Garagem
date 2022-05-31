@@ -54,7 +54,6 @@ namespace ContratoCompraEVenda
             this.txtRenavam = new System.Windows.Forms.TextBox();
             this.txtFormaPagamento = new System.Windows.Forms.RichTextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.btnModeloPagamento = new System.Windows.Forms.Button();
             this.mskTxtCPF = new System.Windows.Forms.MaskedTextBox();
             this.txtExpedidor = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -82,9 +81,9 @@ namespace ContratoCompraEVenda
             // 
             this.btnGerarPDF.BackColor = System.Drawing.Color.Black;
             this.btnGerarPDF.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGerarPDF.Location = new System.Drawing.Point(934, 533);
+            this.btnGerarPDF.Location = new System.Drawing.Point(570, 543);
             this.btnGerarPDF.Name = "btnGerarPDF";
-            this.btnGerarPDF.Size = new System.Drawing.Size(243, 98);
+            this.btnGerarPDF.Size = new System.Drawing.Size(130, 79);
             this.btnGerarPDF.TabIndex = 22;
             this.btnGerarPDF.Text = "Gerar contrato";
             this.btnGerarPDF.UseVisualStyleBackColor = false;
@@ -132,7 +131,7 @@ namespace ContratoCompraEVenda
             this.label4.BackColor = System.Drawing.Color.White;
             this.label4.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(668, 54);
+            this.label4.Location = new System.Drawing.Point(495, 154);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(33, 20);
             this.label4.TabIndex = 4;
@@ -144,7 +143,7 @@ namespace ContratoCompraEVenda
             this.label5.BackColor = System.Drawing.Color.White;
             this.label5.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Red;
-            this.label5.Location = new System.Drawing.Point(668, 11);
+            this.label5.Location = new System.Drawing.Point(283, 154);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(41, 20);
             this.label5.TabIndex = 5;
@@ -152,20 +151,20 @@ namespace ContratoCompraEVenda
             // 
             // txtNomeCliente
             // 
-            this.txtNomeCliente.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNomeCliente.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNomeCliente.Location = new System.Drawing.Point(97, 6);
             this.txtNomeCliente.Name = "txtNomeCliente";
-            this.txtNomeCliente.Size = new System.Drawing.Size(466, 31);
+            this.txtNomeCliente.Size = new System.Drawing.Size(603, 27);
             this.txtNomeCliente.TabIndex = 1;
             this.txtNomeCliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNomeCliente_KeyPress);
             // 
             // txtLogradouro
             // 
-            this.txtLogradouro.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLogradouro.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLogradouro.Location = new System.Drawing.Point(97, 47);
             this.txtLogradouro.Name = "txtLogradouro";
-            this.txtLogradouro.Size = new System.Drawing.Size(466, 31);
-            this.txtLogradouro.TabIndex = 4;
+            this.txtLogradouro.Size = new System.Drawing.Size(603, 27);
+            this.txtLogradouro.TabIndex = 2;
             // 
             // label7
             // 
@@ -173,19 +172,19 @@ namespace ContratoCompraEVenda
             this.label7.BackColor = System.Drawing.Color.White;
             this.label7.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Red;
-            this.label7.Location = new System.Drawing.Point(891, 105);
+            this.label7.Location = new System.Drawing.Point(247, 199);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(109, 20);
+            this.label7.Size = new System.Drawing.Size(83, 20);
             this.label7.TabIndex = 11;
-            this.label7.Text = "Estado civil";
+            this.label7.Text = "Est. civil";
             // 
             // txtCidade
             // 
-            this.txtCidade.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCidade.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCidade.Location = new System.Drawing.Point(97, 99);
             this.txtCidade.Name = "txtCidade";
-            this.txtCidade.Size = new System.Drawing.Size(179, 31);
-            this.txtCidade.TabIndex = 7;
+            this.txtCidade.Size = new System.Drawing.Size(179, 27);
+            this.txtCidade.TabIndex = 3;
             // 
             // label8
             // 
@@ -205,7 +204,7 @@ namespace ContratoCompraEVenda
             this.label9.BackColor = System.Drawing.Color.White;
             this.label9.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.Red;
-            this.label9.Location = new System.Drawing.Point(326, 105);
+            this.label9.Location = new System.Drawing.Point(282, 102);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(31, 20);
             this.label9.TabIndex = 15;
@@ -246,18 +245,18 @@ namespace ContratoCompraEVenda
             "SP",
             "SE",
             "TO"});
-            this.cmbUF.Location = new System.Drawing.Point(363, 102);
+            this.cmbUF.Location = new System.Drawing.Point(319, 99);
             this.cmbUF.Name = "cmbUF";
             this.cmbUF.Size = new System.Drawing.Size(57, 26);
-            this.cmbUF.TabIndex = 8;
+            this.cmbUF.TabIndex = 4;
             // 
             // txtProfissao
             // 
-            this.txtProfissao.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtProfissao.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtProfissao.Location = new System.Drawing.Point(97, 147);
             this.txtProfissao.Name = "txtProfissao";
-            this.txtProfissao.Size = new System.Drawing.Size(179, 31);
-            this.txtProfissao.TabIndex = 11;
+            this.txtProfissao.Size = new System.Drawing.Size(179, 27);
+            this.txtProfissao.TabIndex = 6;
             // 
             // cmbEstadoCivil
             // 
@@ -269,16 +268,16 @@ namespace ContratoCompraEVenda
             "casado(a)",
             "divorciado(a)",
             "viúvo(a)"});
-            this.cmbEstadoCivil.Location = new System.Drawing.Point(1015, 102);
+            this.cmbEstadoCivil.Location = new System.Drawing.Point(336, 193);
             this.cmbEstadoCivil.Name = "cmbEstadoCivil";
             this.cmbEstadoCivil.Size = new System.Drawing.Size(150, 26);
-            this.cmbEstadoCivil.TabIndex = 10;
+            this.cmbEstadoCivil.TabIndex = 11;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Bold);
-            this.label10.Location = new System.Drawing.Point(907, 415);
+            this.label10.Location = new System.Drawing.Point(488, 439);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(54, 20);
             this.label10.TabIndex = 20;
@@ -289,7 +288,8 @@ namespace ContratoCompraEVenda
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.Color.White;
             this.label11.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Bold);
-            this.label11.Location = new System.Drawing.Point(17, 507);
+            this.label11.ForeColor = System.Drawing.Color.Black;
+            this.label11.Location = new System.Drawing.Point(17, 528);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(202, 20);
             this.label11.TabIndex = 21;
@@ -299,7 +299,7 @@ namespace ContratoCompraEVenda
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Bold);
-            this.label12.Location = new System.Drawing.Point(29, 246);
+            this.label12.Location = new System.Drawing.Point(29, 276);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(58, 20);
             this.label12.TabIndex = 22;
@@ -309,7 +309,7 @@ namespace ContratoCompraEVenda
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Bold);
-            this.label13.Location = new System.Drawing.Point(3, 415);
+            this.label13.Location = new System.Drawing.Point(4, 439);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(87, 20);
             this.label13.TabIndex = 23;
@@ -317,34 +317,34 @@ namespace ContratoCompraEVenda
             // 
             // txtPlaca
             // 
-            this.txtPlaca.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPlaca.Location = new System.Drawing.Point(977, 404);
+            this.txtPlaca.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPlaca.Location = new System.Drawing.Point(548, 428);
             this.txtPlaca.Name = "txtPlaca";
-            this.txtPlaca.Size = new System.Drawing.Size(179, 31);
+            this.txtPlaca.Size = new System.Drawing.Size(152, 27);
             this.txtPlaca.TabIndex = 19;
             // 
             // txtCarro
             // 
-            this.txtCarro.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCarro.Location = new System.Drawing.Point(97, 235);
+            this.txtCarro.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCarro.Location = new System.Drawing.Point(97, 265);
             this.txtCarro.Name = "txtCarro";
-            this.txtCarro.Size = new System.Drawing.Size(190, 31);
+            this.txtCarro.Size = new System.Drawing.Size(190, 27);
             this.txtCarro.TabIndex = 12;
             // 
             // txtRenavam
             // 
-            this.txtRenavam.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRenavam.Location = new System.Drawing.Point(97, 404);
+            this.txtRenavam.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRenavam.Location = new System.Drawing.Point(97, 428);
             this.txtRenavam.Name = "txtRenavam";
-            this.txtRenavam.Size = new System.Drawing.Size(308, 31);
+            this.txtRenavam.Size = new System.Drawing.Size(308, 27);
             this.txtRenavam.TabIndex = 18;
             // 
             // txtFormaPagamento
             // 
-            this.txtFormaPagamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFormaPagamento.Location = new System.Drawing.Point(21, 534);
+            this.txtFormaPagamento.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFormaPagamento.Location = new System.Drawing.Point(21, 551);
             this.txtFormaPagamento.Name = "txtFormaPagamento";
-            this.txtFormaPagamento.Size = new System.Drawing.Size(784, 104);
+            this.txtFormaPagamento.Size = new System.Drawing.Size(521, 71);
             this.txtFormaPagamento.TabIndex = 22;
             this.txtFormaPagamento.Text = "";
             // 
@@ -352,50 +352,37 @@ namespace ContratoCompraEVenda
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Bold);
-            this.label14.Location = new System.Drawing.Point(926, 358);
+            this.label14.Location = new System.Drawing.Point(507, 388);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(35, 20);
             this.label14.TabIndex = 29;
             this.label14.Text = "KM";
-            // 
-            // btnModeloPagamento
-            // 
-            this.btnModeloPagamento.BackColor = System.Drawing.Color.DimGray;
-            this.btnModeloPagamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModeloPagamento.ForeColor = System.Drawing.Color.Yellow;
-            this.btnModeloPagamento.Location = new System.Drawing.Point(820, 555);
-            this.btnModeloPagamento.Name = "btnModeloPagamento";
-            this.btnModeloPagamento.Size = new System.Drawing.Size(96, 57);
-            this.btnModeloPagamento.TabIndex = 31;
-            this.btnModeloPagamento.Text = "Inserir modelo forma de pagamento";
-            this.btnModeloPagamento.UseVisualStyleBackColor = false;
-            this.btnModeloPagamento.Click += new System.EventHandler(this.btnModeloPagamento_Click);
             // 
             // mskTxtCPF
             // 
             this.mskTxtCPF.Culture = new System.Globalization.CultureInfo("en-001");
             this.mskTxtCPF.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludePromptAndLiterals;
             this.mskTxtCPF.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mskTxtCPF.Location = new System.Drawing.Point(715, 5);
+            this.mskTxtCPF.Location = new System.Drawing.Point(330, 148);
             this.mskTxtCPF.Mask = "000.000.000-00";
             this.mskTxtCPF.Name = "mskTxtCPF";
             this.mskTxtCPF.Size = new System.Drawing.Size(156, 30);
-            this.mskTxtCPF.TabIndex = 2;
+            this.mskTxtCPF.TabIndex = 7;
             this.mskTxtCPF.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // txtExpedidor
             // 
-            this.txtExpedidor.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold);
-            this.txtExpedidor.Location = new System.Drawing.Point(1015, 56);
+            this.txtExpedidor.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtExpedidor.Location = new System.Drawing.Point(579, 190);
             this.txtExpedidor.Name = "txtExpedidor";
-            this.txtExpedidor.Size = new System.Drawing.Size(150, 30);
-            this.txtExpedidor.TabIndex = 6;
+            this.txtExpedidor.Size = new System.Drawing.Size(120, 27);
+            this.txtExpedidor.TabIndex = 9;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Bold);
-            this.label6.Location = new System.Drawing.Point(909, 60);
+            this.label6.Location = new System.Drawing.Point(487, 199);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(91, 20);
             this.label6.TabIndex = 36;
@@ -405,7 +392,7 @@ namespace ContratoCompraEVenda
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Bold);
-            this.label15.Location = new System.Drawing.Point(909, 11);
+            this.label15.Location = new System.Drawing.Point(-1, 194);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(88, 20);
             this.label15.TabIndex = 37;
@@ -415,29 +402,29 @@ namespace ContratoCompraEVenda
             // 
             this.mskTxtTelefone.Culture = new System.Globalization.CultureInfo("en-001");
             this.mskTxtTelefone.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludePromptAndLiterals;
-            this.mskTxtTelefone.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mskTxtTelefone.Location = new System.Drawing.Point(1015, 11);
+            this.mskTxtTelefone.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mskTxtTelefone.Location = new System.Drawing.Point(97, 193);
             this.mskTxtTelefone.Mask = "(00) 00000-0000";
             this.mskTxtTelefone.Name = "mskTxtTelefone";
-            this.mskTxtTelefone.Size = new System.Drawing.Size(150, 26);
-            this.mskTxtTelefone.TabIndex = 3;
+            this.mskTxtTelefone.Size = new System.Drawing.Size(150, 31);
+            this.mskTxtTelefone.TabIndex = 10;
             this.mskTxtTelefone.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePromptAndLiterals;
             // 
             // txtRG
             // 
-            this.txtRG.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold);
-            this.txtRG.Location = new System.Drawing.Point(715, 50);
+            this.txtRG.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRG.Location = new System.Drawing.Point(544, 147);
             this.txtRG.Name = "txtRG";
-            this.txtRG.Size = new System.Drawing.Size(156, 30);
-            this.txtRG.TabIndex = 5;
+            this.txtRG.Size = new System.Drawing.Size(156, 27);
+            this.txtRG.TabIndex = 8;
             this.txtRG.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRG_KeyPress);
             // 
             // txtKM
             // 
-            this.txtKM.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold);
-            this.txtKM.Location = new System.Drawing.Point(977, 347);
+            this.txtKM.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtKM.Location = new System.Drawing.Point(548, 374);
             this.txtKM.Name = "txtKM";
-            this.txtKM.Size = new System.Drawing.Size(179, 30);
+            this.txtKM.Size = new System.Drawing.Size(152, 27);
             this.txtKM.TabIndex = 17;
             this.txtKM.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtKM_KeyPress);
             // 
@@ -445,7 +432,7 @@ namespace ContratoCompraEVenda
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Bold);
-            this.label16.Location = new System.Drawing.Point(26, 302);
+            this.label16.Location = new System.Drawing.Point(26, 332);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(61, 20);
             this.label16.TabIndex = 38;
@@ -453,17 +440,17 @@ namespace ContratoCompraEVenda
             // 
             // txtMarca
             // 
-            this.txtMarca.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold);
-            this.txtMarca.Location = new System.Drawing.Point(97, 292);
+            this.txtMarca.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMarca.Location = new System.Drawing.Point(97, 322);
             this.txtMarca.Name = "txtMarca";
-            this.txtMarca.Size = new System.Drawing.Size(190, 30);
+            this.txtMarca.Size = new System.Drawing.Size(190, 27);
             this.txtMarca.TabIndex = 14;
             // 
             // label17
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Bold);
-            this.label17.Location = new System.Drawing.Point(921, 302);
+            this.label17.Location = new System.Drawing.Point(501, 332);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(40, 20);
             this.label17.TabIndex = 40;
@@ -471,27 +458,26 @@ namespace ContratoCompraEVenda
             // 
             // txtCor
             // 
-            this.txtCor.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold);
-            this.txtCor.Location = new System.Drawing.Point(977, 292);
+            this.txtCor.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCor.Location = new System.Drawing.Point(548, 322);
             this.txtCor.Name = "txtCor";
-            this.txtCor.Size = new System.Drawing.Size(179, 30);
+            this.txtCor.Size = new System.Drawing.Size(152, 27);
             this.txtCor.TabIndex = 15;
             this.txtCor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCor_KeyPress);
             // 
             // txtAno
             // 
-            this.txtAno.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAno.Location = new System.Drawing.Point(977, 235);
+            this.txtAno.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAno.Location = new System.Drawing.Point(547, 265);
             this.txtAno.Name = "txtAno";
-            this.txtAno.Size = new System.Drawing.Size(179, 31);
+            this.txtAno.Size = new System.Drawing.Size(152, 27);
             this.txtAno.TabIndex = 13;
-            this.txtAno.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAno_KeyPress);
             // 
             // label18
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Bold);
-            this.label18.Location = new System.Drawing.Point(918, 246);
+            this.label18.Location = new System.Drawing.Point(498, 276);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(43, 20);
             this.label18.TabIndex = 43;
@@ -503,7 +489,7 @@ namespace ContratoCompraEVenda
             this.label19.BackColor = System.Drawing.Color.White;
             this.label19.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.ForeColor = System.Drawing.Color.Red;
-            this.label19.Location = new System.Drawing.Point(575, 103);
+            this.label19.Location = new System.Drawing.Point(394, 102);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(134, 20);
             this.label19.TabIndex = 44;
@@ -511,18 +497,18 @@ namespace ContratoCompraEVenda
             // 
             // txtNacionalidade
             // 
-            this.txtNacionalidade.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold);
-            this.txtNacionalidade.Location = new System.Drawing.Point(715, 96);
+            this.txtNacionalidade.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNacionalidade.Location = new System.Drawing.Point(534, 95);
             this.txtNacionalidade.Name = "txtNacionalidade";
-            this.txtNacionalidade.Size = new System.Drawing.Size(156, 30);
-            this.txtNacionalidade.TabIndex = 9;
+            this.txtNacionalidade.Size = new System.Drawing.Size(166, 27);
+            this.txtNacionalidade.TabIndex = 5;
             this.txtNacionalidade.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNacionalidade_KeyPress);
             // 
             // label20
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Bold);
-            this.label20.Location = new System.Drawing.Point(21, 463);
+            this.label20.Location = new System.Drawing.Point(21, 487);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(66, 20);
             this.label20.TabIndex = 46;
@@ -530,18 +516,18 @@ namespace ContratoCompraEVenda
             // 
             // txtChassi
             // 
-            this.txtChassi.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtChassi.Location = new System.Drawing.Point(97, 452);
+            this.txtChassi.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtChassi.Location = new System.Drawing.Point(97, 476);
             this.txtChassi.Name = "txtChassi";
-            this.txtChassi.Size = new System.Drawing.Size(308, 31);
+            this.txtChassi.Size = new System.Drawing.Size(308, 27);
             this.txtChassi.TabIndex = 20;
             // 
             // txtValor
             // 
-            this.txtValor.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtValor.Location = new System.Drawing.Point(97, 347);
+            this.txtValor.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtValor.Location = new System.Drawing.Point(97, 377);
             this.txtValor.Name = "txtValor";
-            this.txtValor.Size = new System.Drawing.Size(190, 31);
+            this.txtValor.Size = new System.Drawing.Size(190, 27);
             this.txtValor.TabIndex = 16;
             this.txtValor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValor_KeyPress);
             // 
@@ -549,7 +535,7 @@ namespace ContratoCompraEVenda
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Bold);
-            this.label21.Location = new System.Drawing.Point(32, 358);
+            this.label21.Location = new System.Drawing.Point(32, 388);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(55, 20);
             this.label21.TabIndex = 49;
@@ -559,7 +545,7 @@ namespace ContratoCompraEVenda
             // 
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Bold);
-            this.label22.Location = new System.Drawing.Point(857, 474);
+            this.label22.Location = new System.Drawing.Point(438, 487);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(104, 20);
             this.label22.TabIndex = 50;
@@ -568,10 +554,10 @@ namespace ContratoCompraEVenda
             // txtAcessorio
             // 
             this.txtAcessorio.BackColor = System.Drawing.SystemColors.Window;
-            this.txtAcessorio.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAcessorio.Location = new System.Drawing.Point(977, 463);
+            this.txtAcessorio.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAcessorio.Location = new System.Drawing.Point(548, 476);
             this.txtAcessorio.Name = "txtAcessorio";
-            this.txtAcessorio.Size = new System.Drawing.Size(179, 31);
+            this.txtAcessorio.Size = new System.Drawing.Size(152, 27);
             this.txtAcessorio.TabIndex = 21;
             // 
             // Form1
@@ -580,9 +566,8 @@ namespace ContratoCompraEVenda
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
-            this.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.WhatsApp_Image_2020_01_28_at_13_44_57;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(1189, 651);
+            this.ClientSize = new System.Drawing.Size(716, 634);
             this.Controls.Add(this.txtAcessorio);
             this.Controls.Add(this.label22);
             this.Controls.Add(this.label21);
@@ -604,7 +589,6 @@ namespace ContratoCompraEVenda
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtExpedidor);
             this.Controls.Add(this.mskTxtCPF);
-            this.Controls.Add(this.btnModeloPagamento);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.txtFormaPagamento);
             this.Controls.Add(this.txtRenavam);
@@ -667,7 +651,6 @@ namespace ContratoCompraEVenda
         private System.Windows.Forms.TextBox txtRenavam;
         private System.Windows.Forms.RichTextBox txtFormaPagamento;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Button btnModeloPagamento;
         private System.Windows.Forms.MaskedTextBox mskTxtCPF;
         private System.Windows.Forms.TextBox txtExpedidor;
         private System.Windows.Forms.Label label6;

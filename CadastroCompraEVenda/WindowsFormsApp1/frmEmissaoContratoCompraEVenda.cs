@@ -105,7 +105,7 @@ namespace ContratoCompraEVenda
 
         private void txtValor_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 08 && e.KeyChar != 44)
+            if (!char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
             }
@@ -138,14 +138,6 @@ namespace ContratoCompraEVenda
         private void txtCor_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsLetter(e.KeyChar) && e.KeyChar != 08 && e.KeyChar != 32)
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void txtAno_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 08 && e.KeyChar != 47)
             {
                 e.Handled = true;
             }

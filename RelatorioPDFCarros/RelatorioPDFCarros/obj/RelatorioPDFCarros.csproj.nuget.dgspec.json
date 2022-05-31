@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\samir\\Documents\\backup2021\\ProjetoGaragemCarro\\Projeto-Garagem\\RelatorioPDFCarros\\RelatorioPDFCarros\\RelatorioPDFCarros.csproj": {}
+    "C:\\Users\\Samir\\Documents\\Projeto-Garagem\\RelatorioPDFCarros\\RelatorioPDFCarros\\RelatorioPDFCarros.csproj": {}
   },
   "projects": {
-    "C:\\Users\\samir\\Documents\\backup2021\\ProjetoGaragemCarro\\Projeto-Garagem\\RelatorioPDFCarros\\RelatorioPDFCarros\\RelatorioPDFCarros.csproj": {
+    "C:\\Users\\Samir\\Documents\\Projeto-Garagem\\RelatorioPDFCarros\\RelatorioPDFCarros\\RelatorioPDFCarros.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\samir\\Documents\\backup2021\\ProjetoGaragemCarro\\Projeto-Garagem\\RelatorioPDFCarros\\RelatorioPDFCarros\\RelatorioPDFCarros.csproj",
+        "projectUniqueName": "C:\\Users\\Samir\\Documents\\Projeto-Garagem\\RelatorioPDFCarros\\RelatorioPDFCarros\\RelatorioPDFCarros.csproj",
         "projectName": "RelatorioPDFCarros",
-        "projectPath": "C:\\Users\\samir\\Documents\\backup2021\\ProjetoGaragemCarro\\Projeto-Garagem\\RelatorioPDFCarros\\RelatorioPDFCarros\\RelatorioPDFCarros.csproj",
-        "packagesPath": "C:\\Users\\samir\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\samir\\Documents\\backup2021\\ProjetoGaragemCarro\\Projeto-Garagem\\RelatorioPDFCarros\\RelatorioPDFCarros\\obj\\",
+        "projectPath": "C:\\Users\\Samir\\Documents\\Projeto-Garagem\\RelatorioPDFCarros\\RelatorioPDFCarros\\RelatorioPDFCarros.csproj",
+        "packagesPath": "C:\\Users\\Samir\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Samir\\Documents\\Projeto-Garagem\\RelatorioPDFCarros\\RelatorioPDFCarros\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\samir\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Samir\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -63,18 +59,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[3.1.23, 3.1.23]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
         }
       }
     }
